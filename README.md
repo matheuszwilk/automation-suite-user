@@ -69,12 +69,6 @@ Antes de iniciar, certifique-se de ter os seguintes requisitos instalados:
 4. Configure o nome, tipo e opções.
 5. Gere o código com **"Generate Vision Code"**.
 
-## 🪟 Windows Element Inspector
-### Funcionalidades
-✅ Destaca elementos da UI do Windows  
-✅ Captura informações de controles nativos  
-✅ Gera código para automação de aplicativos Windows  
-
 ### Como Usar
 1. Execute o **Windows Element Inspector**.
 2. Passe o mouse sobre o elemento desejado.
@@ -274,10 +268,6 @@ class PracticetestautomationFunctions:
 ### Vision Automation
 ❌ **Elementos não encontrados**: Ajuste a precisão (`confidence`).  
 ❌ **OCR impreciso**: Expanda a região capturada e verifique a instalação do **Tesseract**.  
-
-### Windows Automation
-❌ **Elementos não destacados**: Execute como **administrador**.  
-❌ **Elementos não reconhecidos**: Utilize identificadores mais específicos.  
 
 ## 📚 Recursos Adicionais
 - 📖 **Documentação do BotCity**: [Clique aqui](https://documentation.botcity.dev/)
