@@ -1,0 +1,43 @@
+version: "3"
+
+services:
+  windows:
+    image: dockurr/windows
+    container_name: windows
+
+    environment:
+      VERSION: "10" # Windows 11 Pro
+      USERNAME: "matheus"
+      PASSWORD: "matheus"
+      RAM_SIZE: "8G"
+      CPU_CORES: "4"
+      LANGUAGE: "Portuguese" # Idioma Português
+      REGION: "pt-BR" # Região Brasil
+      KEYBOARD: "pt-BR" # Teclado Português Brasil
+      ALLOW_MULTIPLE_CONNECTIONS: "true" # Permite múltiplas conexões RDP
+      ENABLE_REMOTE_DESKTOP: "true" # Garante que o RDP esteja habilitado
+      DISABLE_RDP_SECURITY: "true" # Desabilita restrições de segurança do RDP
+      DISABLE_WINDOWS_FIREWALL: "true" # Desabilita o firewall do Windows
+      RDP_TLS_SECURITY: "false" # Permite conexões com menor segurança se necessário
+    devices:
+      - /dev/kvm
+      - /dev/net/tun
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "0.0.0.0:8006:8006" # Web viewer - acessível de qualquer IP da rede
+      - "0.0.0.0:3389:3389/tcp" # RDP - acessível de qualquer IP da rede
+      - "0.0.0.0:3389:3389/udp"
+    restart: always
+    stop_grace_period: 2m
+    volumes:
+      - windows_data:/windows
+    shm_size: 2g
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1 # Cloudflare DNS como alternativa, geralmente mais rápido
+    privileged: true # Acesso completo aos recursos do host, necessário para QEMU funcionar corretamente
+
+volumes:
+  windows_data:
+    driver: local

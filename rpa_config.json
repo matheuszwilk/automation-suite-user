@@ -1,0 +1,14 @@
+{
+    "drivers": {
+        "EDGE": "C:/Users/matheus/Music/rpa/RPAs/msedgedriver.exe",
+        "CHROME": "chromedriver.exe",
+        "FIREFOX": "geckodriver.exe"
+    },
+    "ocr": {
+        "tesseract_path": "C:/Program Files (x86)/Tesseract-OCR/tesseract.exe",
+        "screenshots_folder": "C:/Users/matheus/Music/rpa/RPAs/captchas"
+    },
+    "vision": {
+        "images_folder": "C:/Users/matheus/Music/rpa/RPAs/images"
+    }
+}
